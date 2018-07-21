@@ -4,7 +4,7 @@ const prefix = '.'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
+client.user.setGame(`jalil`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -27,8 +27,6 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
 });
-
-
 
 
 
@@ -110,10 +108,6 @@ if(message.content.startsWith('Cya')) {
 
 });
 
-
-client.on('ready', () => {
-  client.user.setGame('Jalil','https://www.twitch.tv/v5bz');
-});
 
 
 
