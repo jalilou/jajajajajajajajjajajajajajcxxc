@@ -109,6 +109,82 @@ if(message.content.startsWith('Cya')) {
 });
 
 
+const superagent = require('superagent');
+
+client.on('message' , async (message) => {
+       if(message.content.startsWith(prefix + "meme")) {
+
+  let{body} = await superagent
+  .get(`https://api-to.get-a.life/meme`);
+
+  let me = new Discord.RichEmbed()
+  .setColor("#7289DA")
+  .setTitle(".-,")
+  .setImage(body.url);
+
+  message.channel.send(me);
+    }
+    });
+
+
+const codes = {
+    ' ': '   ',
+    '0': '0⃣',
+    '1': '1⃣',
+    '2': '2⃣',
+    '3': '3⃣',
+    '4': '4⃣',
+    '5': '5⃣',
+    '6': '6⃣',
+    '7': '7⃣',
+    '8': '8⃣',
+    '9': '9⃣',
+    '!': '❕',
+    '?': '❔',
+    '#': '#⃣',
+    '*': '*⃣'
+  };
+  
+  'abcdefghijklmnopqrstuvwxyz'.split('').forEach(c => {
+    codes[c] = codes[c.toUpperCase()] = ` :regional_indicator_${c}:`;
+  });
+  
+  
+  client.on('message' , async message => {
+         if(message.content.startsWith(prefix + "e")) {
+            let args = message.content.split(" ").slice(1);
+    if (args.length < 1) {
+      message.channel.send('You must provide some text to emojify!');
+  }
+  
+  message.channel.send(
+      args.join(' ')
+          .split('')
+          .map(c => codes[c] || c)
+          .join('')
+  );
+  };
+  });
+
+
+client.on('message' , async (message) => {
+       if(message.content.startsWith(`<@${client.user.id}>`)) {
+              
+ let responses = [
+        'what!',
+        '-_-',
+        'huh',
+        '? ',
+    ]
+    
+    // Fetch a random item from the array
+    let fetched = responses[Math.floor(Math.random() * responses.length)];
+   message.reply(fetched)
+       }
+  
+});
+
+
 
 
 client.login(process.env.BOT_TOKEN);
