@@ -183,18 +183,5 @@ client.on('message' , async (message) => {
   
 });
 
-client.on('message' , message => {
-
-    if (message.content === "ojo") {
-     const embed = new Discord.RichEmbed()
- .setColor("RANDOM")
- .setThumbnail(client.user.avatarURL)     
- .setDescription(** ojo gay **
-`);
-  message.author.sendEmbed(embed);
-   }
-});
-
-
 
 client.login(process.env.BOT_TOKEN);
