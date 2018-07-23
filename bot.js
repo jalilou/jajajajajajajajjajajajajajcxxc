@@ -109,7 +109,6 @@ if(message.content.startsWith('Cya')) {
 });
 
 
-const superagent = require('superagent');
 
 client.on('message' , async (message) => {
        if(message.content.startsWith(prefix + "meme")) {
